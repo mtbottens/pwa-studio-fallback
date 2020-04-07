@@ -11,35 +11,7 @@ yarn create @magento/pwa
 yarn add -D pwa-studio-fallback
 ```
 
-Add the following to `webpack.config.js`
-
-```
-...
-const HTMLWebpackPlugin = require('html-webpack-plugin');
-const FallbackLoader = require('pwa-studio-fallback');
-const path = require('path');
-...
-
-
-...
-    const moduleNames = [
-        '@magento/peregrine',
-        '@magento/venia-ui'
-    ];
-    const modules = moduleNames.map(moduleName => ({
-        moduleDir: path.resolve(`node_modules/${moduleName}`),
-        name: moduleName
-    }));
-
-    clientConfig.resolve.plugins.push(
-        new FallbackLoader({
-            extensions: ['.js', '.css'],
-            root: process.cwd(),
-            modules
-        })
-    );
-...
-```
+This module leverages the PWA Build Bus from pwa-studio to automatically adjust the webpack config to include this fallback resolver plugin.
 
 ## Usage
 

@@ -1,6 +1,6 @@
 {
   "name": "pwa-studio-fallback",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,10 @@
     "testPathIgnorePatterns": [
       "<rootDir>/__tests__/fixtures"
     ]
+  },
+  "pwa-studio": {
+    "targets": {
+      "intercept": "./intercept"
+    }
   }
 }
